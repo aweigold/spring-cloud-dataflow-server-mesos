@@ -16,7 +16,7 @@
   "projectReleases": [
     {
       "releaseStatus": "GENERAL_AVAILABILITY",
-      "refDocUrl": "http://trustedchoice.github.io/spring-cloud-dataflow-server-mesos/docs/1.7.0.RELEASE/reference/html",
+      "refDocUrl": "http://trustedchoice.github.io/spring-cloud-dataflow-server-mesos/docs/1.7.0.RELEASE/reference/htmlsingle/",
       "apiDocUrl": "http://trustedchoice.github.io/spring-cloud-dataflow-server-mesos/docs/1.7.0.RELEASE/api/",
       "groupId": "com.trustedchoice",
       "artifactId": "spring-cloud-dataflow-server-mesos",
