@@ -5,18 +5,18 @@
 	<packaging>jar</packaging>
 	<name>Mesos Data Flow Server</name>
 	<parent>
-		<groupId>org.springframework.cloud</groupId>
+		<groupId>com.trustedchoice</groupId>
 		<artifactId>spring-cloud-dataflow-server-mesos-parent</artifactId>
-		<version>1.7.0.BUILD-SNAPSHOT</version>
+		<version>1.7.0.RELEASE</version>
 	</parent>
 	<properties>
 		<start-class>org.springframework.cloud.dataflow.server.mesos.MesosDataFlowServer</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
+			<groupId>com.trustedchoice</groupId>
 			<artifactId>spring-cloud-dataflow-server-mesos-autoconfig</artifactId>
-			<version>1.7.0.BUILD-SNAPSHOT</version>
+			<version>1.7.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -53,7 +53,7 @@
 				<configuration>
 				  <images>
 					<image>
-					  <name>springcloud/${project.artifactId}</name>
+					  <name>trustedchoice/${project.artifactId}</name>
 					  <build>
 						<from>java:8-alpine</from>
 						<volumes>

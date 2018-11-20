@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.springframework.cloud</groupId>
+	<groupId>com.trustedchoice</groupId>
 	<artifactId>spring-cloud-dataflow-server-mesos-parent</artifactId>
-	<version>1.7.0.BUILD-SNAPSHOT</version>
+	<version>1.7.0.RELEASE</version>
 	<packaging>pom</packaging>
 
 	<parent>
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-dataflow-parent</artifactId>
-		<version>1.7.0.RC1</version>
+		<version>1.7.0.RELEASE</version>
 		<relativePath />  <!-- lookup parent from repository -->
 	</parent>
 
@@ -20,14 +20,14 @@
 	</modules>
 
 	<properties>
-		<spring-cloud-dataflow.version>1.7.0.RC1</spring-cloud-dataflow.version>
-		<spring-cloud-deployer-mesos.version>1.3.0.BUILD-SNAPSHOT</spring-cloud-deployer-mesos.version>
+		<spring-cloud-dataflow.version>1.7.0.RELEASE</spring-cloud-dataflow.version>
+		<spring-cloud-deployer-mesos.version>1.3.4.RELEASE</spring-cloud-deployer-mesos.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.springframework.cloud</groupId>
+				<groupId>com.trustedchoice</groupId>
 				<artifactId>spring-cloud-deployer-mesos</artifactId>
 				<version>${spring-cloud-deployer-mesos.version}</version>
 			</dependency>

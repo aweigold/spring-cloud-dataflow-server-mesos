@@ -1,15 +1,28 @@
-sudo: false
+sudo: required
 cache:
   directories:
     - $HOME/.m2
 language: java
 jdk:
   - oraclejdk8
+env:
+  global:
+    # GITHUB_USERNAME
+    - secure: "wbNj7RctLg+OIY57IIGa0q5Y5OjCv6cDVL+0RRlAFwOdMrU8IziWfW8yGsmQrd9fo0Og5tCBf0Xq55ny4SnJON4cKbMaCLiO/0klMPV49uUHqyZpcfPiCKuBulkfQ7VwmWmGjf5eLWBoNuNVRSPNzb9R06uLSpj9Qt/zPmVODqxqB2WwyNpImwz7YsX/z8lCACu1L4qeIsy5JtOIwpreDLtOe8mbgOIeQLad2Y07jX36O4umzwNHpuP0pSorK6GuJ91fwwp0BAAMsbqCfOvyXlaYWLLfnoMMDzq/QlolzjG/95mvglK3pKY7KX30iZ5fsk7etShINY8Ud8FN7yW6prItsjXFLyXHZeEf9R2bRzKF1KJ2yZ15qoO1nq2/dbeU/4FE8TCnmhxeN0excWi28xzyWsyCq3zAnyQS91KyEMoJMm/v1OHtL3RiOgfoVr29si/o3oEKEkA0TSJbPJ6fmTGQ2GhXUJm7klycOwbQAalyUU4qgNyoN0IG++tVAW0XQW8FBsdUGUVSOktFylJ7NT+xF+4yY5YVIhF8J4cAn+p4rOJfbDX2zIU7KPy07Ymw/NOE0Zr+A9nv9AdnmRsu5PJ6lpOmIPdTp5sjdQXMEtpmheECM55gwGlubSbkW0KewONooNQVrMe5FO10ZVY3XvHXsYBA3WIpAtvsbgidTjQ="
+    # GITHUB_ACCESS_TOKEN
+    - secure: "vsVwm6nuMGxQ/jTiQdRVVgCFG+sTPf2FsH1cGWLJBYxsKUMyKb/fx9YahOBjxTZAS9t5GAvWktSIoOmeedNHS+MACHOKywYG5u0YmRC89Fl1iQODQdESPH3uKxkqGAgt0rWWqQ68jn/RIyRM/jjMmJKNkTRflg5P4N83G+GXuDY9sGYFrXPUQe9UOgkPlB2Av3FXcYnEHU6Wcx3V/X80DyGmGNFi8IrYfKLTnw5oT5EiTa2RBfjxImMGpAPU8ATqvbrKaBe+5vAZceDkTmB7vFQCwfn9jS+PcZgbuzsmRoXOfycTxaDyxFB01bu286pXptYR6/BlsXd0z2E5sdGANDfGZA1nlfU81rtJ7SLvgsAlaFVdUGXBzyMaF4gcaPYabVV85KZ17rSziPXUapVEbcFNTp0DHJJ7uULTPXF2KgxzS52RfjqVZsUwo/w5YkQ53i1Bx5PN7Lw69Qmxxss3qrg+lBCNJadpbeAYZktRGvnbkiMInMod/7Hqf1+3LlzDmu0wJcvbt48HRanOaNoSkhcI2g3d24uyylNEbAbk4dStEbADc1ksQ2M6Ae+jz93w5rYkRKmMKsLjjcLtoCgU3+2DukqhvOUFzBRDXWnMbLOluddR9wuAbYcCl+vjFLSmZzw63ewySh2VWBnlRkyRjNmkqOUGDn62ABz85/PPosk="
+    # DOCKER_PASSWORD
+    - secure: "rHTO0f8FY1kQ/8j+I3OEiJDKa+c08Y57DTnIQbPZMGHYvNPtEmwoq2n4QXntr/27qdlAz5yXGMdmvvp0Oggj9PSJc70ZLkwohARdrfDi2o1Uzc/vAEXJh1hY+pRKxTyB3Fiyq01xfpnBPT9LQD5REYY2Fmkgr12qwysg/Xx9V7H+SW4kGaCKw2eiLh4IvTPTuHkgK+Z2Fubjuf67GsY8gR52F3T/lqs2DH/L8ffpj2jllI4tR2rOR0TaoyBVUwu7onZ7ZD50ABZllc81T04dsATqq64f1jbF5n5l/To2y+i4CfxLh0zkVVz5IXMkcTDZFHSLJ0caZDeXyRIzHzaKtSa4M1OLNs6bHE3+wftTDmn+a+QeKnZF4tmMgIT2YqlPock7sACYPjuHyJ/ErV79FWA+0Ax9lLHivAkrRWCoBck3cxJ7lQeRvtKFHFNtcApRqzpdVLTJAmeKxX9YMc9GGopO9aFWwvEo6Y+O9JLClR9kk2tA6SGCFxj8eD+7e8dFcfobGAEVKSKs2rAe0oL4D8S3dUVUW4I0GXoVtQgT3n8g3VjnUJUBJ7Rd7JQknF7ffEGfvqtBOQ+rZ1/nF9BLVrT2ZtM9F+QRFToMWv03Cl9dWg8kP5Ow1je1CxpqbpJgnugs8K0JPL4YxUN0hC7cTnHnfsgSo0jUv1Jp5uf1Z8k="
 services:
   - redis-server
+  - docker
 install: true
 script:
-script:
-  - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || ./mvnw package -Pfull -U -Dmaven.test.redirectTestOutputToFile=false'
-  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] || ./mvnw package -DskipTests -U -Dmaven.test.redirectTestOutputToFile=false'
-
+  - ./mvnw clean install
+deploy:
+  provider: script
+  script: chmod +x .travis/release.sh && .travis/release.sh
+  skip_cleanup: true
+  on:
+    jdk: oraclejdk8
+    tags: true

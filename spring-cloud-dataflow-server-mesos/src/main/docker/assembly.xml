@@ -6,7 +6,7 @@
     <dependencySets>
         <dependencySet>
             <includes>
-                <include>org.springframework.cloud:spring-cloud-dataflow-server-mesos</include>
+                <include>com.trustedchoice:spring-cloud-dataflow-server-mesos</include>
             </includes>
             <outputDirectory>.</outputDirectory>
             <outputFileNameMapping>spring-cloud-dataflow-server-mesos.jar</outputFileNameMapping>

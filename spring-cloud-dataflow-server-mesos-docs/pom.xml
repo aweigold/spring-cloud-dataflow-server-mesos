@@ -2,19 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>spring-cloud-dataflow-server-mesos-docs</artifactId>
-	<version>1.7.0.BUILD-SNAPSHOT</version>
 	<parent>
-		<groupId>org.springframework.cloud</groupId>
+		<groupId>com.trustedchoice</groupId>
 		<artifactId>spring-cloud-dataflow-server-mesos-parent</artifactId>
-		<version>1.7.0.BUILD-SNAPSHOT</version>
+		<version>1.7.0.RELEASE</version>
 	</parent>
+
 	<name>spring-cloud-dataflow-server-mesos-docs</name>
+	<description>Spring Cloud Data Flow Admin Mesos</description>
 	<properties>
 		<main.basedir>${basedir}/..</main.basedir>
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
+			<groupId>com.trustedchoice</groupId>
 			<artifactId>spring-cloud-dataflow-server-mesos</artifactId>
 			<version>${project.version}</version>
 		</dependency>
@@ -64,26 +65,23 @@
 								<project-version>${project.version}</project-version>
 								<project-artifactId>${project.artifactId}</project-artifactId>
 								<version-type-lowercase>${version-type-lowercase}</version-type-lowercase>
+
 								<dataflow-project-version>${spring-cloud-dataflow.version}</dataflow-project-version>
 								<dataflow-version-type-lowercase>${dataflow-version-type-lowercase}</dataflow-version-type-lowercase>
+								<skipper-version-type-lowercase>${skipper-version-type-lowercase}</skipper-version-type-lowercase>
+								<dataflow-branch-or-tag>${dataflow-branch-or-tag}</dataflow-branch-or-tag>
+								<dataflow-asciidoc>https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/${dataflow-branch-or-tag}/spring-cloud-dataflow-docs/src/main/asciidoc</dataflow-asciidoc>
+								<deployer-branch-or-tag>${deployer-branch-or-tag}</deployer-branch-or-tag>
+								<skipper-version>${spring-cloud-skipper.version}</skipper-version>
+								<skipper-branch-or-tag>${skipper-branch-or-tag}</skipper-branch-or-tag>
+
+								<!-- The following two are deps of this project and set automatically.-->
+								<!-- Others are loose dependencies, and current-SNAPSHOT typically make sense-->
+								<scdf-core-version>${org.springframework.cloud:spring-cloud-dataflow-core:jar.version}</scdf-core-version>
+								<sct-core-version>${org.springframework.cloud:spring-cloud-task-core:jar.version}</sct-core-version>
 							</attributes>
 						</configuration>
 						<executions>
-							<execution>
-								<id>generate-docbook</id>
-								<phase>generate-resources</phase>
-								<goals>
-									<goal>process-asciidoc</goal>
-								</goals>
-								<configuration>
-									<sourceDocumentName>index.adoc</sourceDocumentName>
-									<backend>docbook5</backend>
-									<doctype>book</doctype>
-									<attributes>
-										<docinfo>true</docinfo>
-									</attributes>
-								</configuration>
-							</execution>
 							<execution>
 								<id>generate-html5</id>
 								<phase>generate-resources</phase>
@@ -138,30 +136,6 @@
 						</dependencies>
 						<executions>
 							<execution>
-								<id>html-single</id>
-								<goals>
-									<goal>generate-html</goal>
-								</goals>
-								<phase>generate-resources</phase>
-								<configuration>
-									<htmlCustomization>${basedir}/src/main/docbook/xsl/html-singlepage.xsl</htmlCustomization>
-									<targetDirectory>${basedir}/target/docbook/htmlsingle</targetDirectory>
-									<postProcess>
-										<copy todir="${basedir}/target/contents/reference/htmlsingle">
-											<fileset dir="${basedir}/target/docbook/htmlsingle">
-												<include name="**/*.html" />
-											</fileset>
-										</copy>
-										<copy todir="${basedir}/target/contents/reference/htmlsingle/images">
-										        <fileset dir="${basedir}/target/generated-docs/images" />
-										</copy>
-										<copy todir="${basedir}/target/contents/reference/htmlsingle/css">
-											<fileset dir="${basedir}/src/main/docbook/css" />
-										</copy>
-									</postProcess>
-								</configuration>
-							</execution>
-							<execution>
 								<id>html</id>
 								<goals>
 									<goal>generate-html</goal>
@@ -183,51 +157,6 @@
 										<copy todir="${basedir}/target/contents/reference/html/css">
 											<fileset dir="${basedir}/src/main/docbook/css" />
 										</copy>
-									</postProcess>
-								</configuration>
-							</execution>
-							<execution>
-								<id>pdf</id>
-								<goals>
-									<goal>generate-pdf</goal>
-								</goals>
-								<phase>generate-resources</phase>
-								<configuration>
-									<foCustomization>${basedir}/src/main/docbook/xsl/pdf.xsl</foCustomization>
-									<targetDirectory>${basedir}/target/docbook/pdf</targetDirectory>
-									<postProcess>
-										<copy todir="${basedir}/target/contents/reference">
-											<fileset dir="${basedir}/target/docbook">
-												<include name="**/*.pdf" />
-											</fileset>
-										</copy>
-										<move file="${basedir}/target/contents/reference/pdf/index.pdf" tofile="${basedir}/target/contents/reference/pdf/spring-cloud-dataflow-server-mesos-reference.pdf" />
-									</postProcess>
-								</configuration>
-							</execution>
-
-							<execution>
-								<id>epub</id>
-								<goals>
-									<goal>generate-epub3</goal>
-								</goals>
-								<phase>generate-resources</phase>
-								<configuration>
-									<epubCustomization>${basedir}/src/main/docbook/xsl/epub.xsl</epubCustomization>
-									<targetDirectory>${basedir}/target/docbook/epub</targetDirectory>
-									<preProcess>
-										<copy todir="${basedir}/target/docbook/epub/images">
-											<fileset dir="${basedir}/src/main/docbook/images" />
-											<fileset dir="${basedir}/src/main/asciidoc/images" />
-										</copy>
-									</preProcess>
-									<postProcess>
-										<copy todir="${basedir}/target/contents/reference/epub">
-											<fileset dir="${basedir}/target/docbook">
-												<include name="**/*.epub" />
-											</fileset>
-										</copy>
-										<move file="${basedir}/target/contents/reference/epub/index.epub" tofile="${basedir}/target/contents/reference/epub/spring-cloud-dataflow-server-mesos-reference.epub" />
 									</postProcess>
 								</configuration>
 							</execution>
@@ -272,6 +201,10 @@
 										<zip destfile="${project.build.directory}/${project.artifactId}-${project.version}.zip">
 											<zipfileset src="${project.build.directory}/${project.artifactId}-${project.version}-javadoc.jar" prefix="api" />
 											<fileset dir="${project.build.directory}/contents" />
+											<zipfileset dir="${project.build.directory}/generated-docs" prefix="reference/htmlsingle">
+												<include name="index.html" />
+												<include name="images/**" />
+											</zipfileset>
 										</zip>
 									</target>
 								</configuration>
@@ -304,6 +237,29 @@
 										<stringutil string="${dataflow-version-type}" property="dataflow-version-type-lowercase">
 											<lowercase />
 										</stringutil>
+
+										<var name="deployer-version-type" value="${spring-cloud-deployer-cloudfoundry.version}" />
+										<propertyregex property="deployer-version-type" override="true" input="${deployer-version-type}" regexp=".*\.(.*)" replace="\1" />
+										<propertyregex property="deployer-version-type" override="true" input="${deployer-version-type}" regexp="(M)\d+" replace="MILESTONE" />
+										<propertyregex property="deployer-version-type" override="true" input="${deployer-version-type}" regexp="(RC)\d+" replace="MILESTONE" />
+										<propertyregex property="deployer-version-type" override="true" input="${deployer-version-type}" regexp="BUILD-(.*)" replace="SNAPSHOT" />
+										<stringutil string="${deployer-version-type}" property="deployer-version-type-lowercase">
+											<lowercase />
+										</stringutil>
+
+										<var name="skipper-version-type" value="${spring-cloud-skipper.version}" />
+										<propertyregex property="skipper-version-type" override="true" input="${skipper-version-type}" regexp=".*\.(.*)" replace="\1" />
+										<propertyregex property="skipper-version-type" override="true" input="${skipper-version-type}" regexp="(M)\d+" replace="MILESTONE" />
+										<propertyregex property="skipper-version-type" override="true" input="${skipper-version-type}" regexp="(RC)\d+" replace="MILESTONE" />
+										<propertyregex property="skipper-version-type" override="true" input="${skipper-version-type}" regexp="BUILD-(.*)" replace="SNAPSHOT" />
+										<stringutil string="${skipper-version-type}" property="skipper-version-type-lowercase">
+											<lowercase />
+										</stringutil>
+
+										<!-- This will use the vX.Y.Z tag for releases, using master for anything else (which is deemed ok, even for maintenance SNAPSHOT) -->
+										<propertyregex property="dataflow-branch-or-tag" override="true" input="${spring-cloud-dataflow.version}" regexp=".*\.(?:M\d+|RC\d+|RELEASE)" select="v\0" defaultValue="master" />
+										<propertyregex property="deployer-branch-or-tag" override="true" input="${spring-cloud-deployer-cloudfoundry.version}" regexp=".*\.(?:M\d+|RC\d+|RELEASE)" select="v\0" defaultValue="master" />
+										<propertyregex property="skipper-branch-or-tag" override="true" input="${spring-cloud-skipper.version}" regexp=".*\.(?:M\d+|RC\d+|RELEASE)" select="v\0" defaultValue="master" />
 									</target>
 								</configuration>
 							</execution>
@@ -326,6 +282,28 @@
 											<type>zip;zip.type=docs;zip.deployed=false</type>
 										</artifact>
 									</artifacts>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>net.radai</groupId>
+						<artifactId>grep-maven-plugin</artifactId>
+						<version>1.0</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>grep</goal>
+								</goals>
+								<phase>test</phase>
+								<configuration>
+									<greps>
+										<grep>
+											<file>target/generated-docs/index.html</file>
+											<grepPattern>Unresolved directive in .*\.adoc - include::</grepPattern>
+											<failIfFound>true</failIfFound>
+										</grep>
+									</greps>
 								</configuration>
 							</execution>
 						</executions>

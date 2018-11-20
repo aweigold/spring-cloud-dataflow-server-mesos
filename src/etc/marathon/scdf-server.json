@@ -6,7 +6,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "springcloud/spring-cloud-dataflow-server-mesos",
+      "image": "trustedchoice/spring-cloud-dataflow-server-mesos",
       "network": "BRIDGE",
       "portMappings": [
         { "containerPort": 9393 }

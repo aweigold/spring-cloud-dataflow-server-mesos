@@ -1,54 +1,83 @@
 = Spring Cloud Data Flow Server for Apache Mesos
 Sabby Anandan, Artem Bilan, Marius Bogoevici, Eric Bottard, Mark Fisher, Ilayaperumal Gopinathan, Gunnar Hillert, Mark Pollack, Patrick Peralta, Glenn Renfro, Gary Russell, Thomas Risberg, David Turanski, Janne Valkealahti
 :doctype: book
-:toc:
+:toc: left
 :toclevels: 4
 :source-highlighter: prettify
 :numbered:
 :icons: font
 :hide-uri-scheme:
+:docinfo: shared
+:sectanchors:
+:attributes: allow-uri-read
 
-// Since the core projects will be at different release cadences, the following tokens need changed at the time of every release
-// any git link should be the tag for a release and the branch for build snapshots
 :scdf-core-version: {dataflow-project-version}
+
+// !!! snapshot tags vs relese tags - update these before and after each release !!!
+
+//:scdf-core-git: v{scdf-core-version}
 :scdf-core-git: master
-:scde-mesos-version: 1.1.0.BUILD-SNAPSHOT
+:scde-mesos-version: 1.3.4.RELEASE
 :scde-mesos-git: master
 :scst-core-version: Camden.RELEASE
 :sct-core-version: 1.2.0.RELEASE
-:scst-starters-core-version: 1.2.0.RELEASE
-:sct-starters-core-version: 1.2.0.RELEASE
+:scst-starters-core-version: 1.3.3.RELEASE
+:sct-starters-core-version: 1.3.3.RELEASE
 
-:dataflow-asciidoc: https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/{scdf-core-git}/spring-cloud-dataflow-docs/src/main/asciidoc
+//:github-tag: v{project-version}
+:github-tag: master
 
-// the following tags used for links don't have to exists during build but must exist once docs are published
-:git-branch-tag: master
+//:docker-tag: {project-version}
 :docker-tag: latest
+
+// Since the core projects will be at different release cadences, the following tokens might need to be changed for a release
+:docker-http-source-rabbit-version: 1.3.3.RELEASE
+:docker-time-source-rabbit-version: 1.3.3.RELEASE
+:docker-log-sink-rabbit-version: 1.3.3.RELEASE
+:docker-http-source-kafka-version: 1.3.3.RELEASE
+:docker-time-source-kafka-version: 1.3.3.RELEASE
+:docker-log-sink-kafka-version: 1.3.3.RELEASE
+:docker-timestamp-task-version: 1.3.3.RELEASE
+:skipper-core-version: 1.1.0.RELEASE
+
+:spring-cloud-dataflow-docs: http://docs.spring.io/spring-cloud-dataflow/docs/{scdf-core-version}/reference
+:scs-app-starters-docs: https://docs.spring.io/spring-cloud-stream-app-starters/docs/Darwin.SR2/reference
+:scs-app-starters-docs-htmlsingle: https://docs.spring.io/spring-cloud-stream-app-starters/docs/Darwin.SR2/reference/htmlsingle/
+:spring-cloud-stream-docs: https://docs.spring.io/spring-cloud-stream-app-starters/docs/Darwin.SR2/reference/htmlsingle/
+:github-repo: trustedchoice/spring-cloud-dataflow-server-mesos
+:github-code: http://github.com/{github-repo}
+:dataflow-asciidoc: https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/{scdf-core-git}/spring-cloud-dataflow-docs/src/main/asciidoc
 
 ifdef::backend-html5[]
 
 Version {project-version}
 
-(C) 2012-2017 Pivotal Software, Inc.
+(C) 2012-2018 Pivotal Software, Inc.
 
-_Copies of this document may be made for your own use and for distribution to
+Copies of this document may be made for your own use and for distribution to
 others, provided that you do not charge any fee for such copies and further
 provided that each copy contains this Copyright Notice, whether distributed in
-print or electronically._
+print or electronically.
 
 endif::backend-html5[]
 
 // ======================================================================================
 
+// Always put a blank line before an Asciidoc include statement. Not doing so can cause trouble.
+
 include::introduction.adoc[]
 
 include::overview.adoc[]
+
+include::{dataflow-asciidoc}/applications.adoc[]
 
 include::{dataflow-asciidoc}/architecture.adoc[]
 
 include::getting-started.adoc[]
 
 include::configuration.adoc[]
+
+include::{dataflow-asciidoc}/shell.adoc[]
 
 include::{dataflow-asciidoc}/streams.adoc[]
 
@@ -57,6 +86,5 @@ include::{dataflow-asciidoc}/tasks.adoc[]
 include::{dataflow-asciidoc}/dashboard.adoc[]
 
 include::appendix.adoc[]
-
 
 // ======================================================================================

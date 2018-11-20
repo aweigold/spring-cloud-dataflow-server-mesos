@@ -3,19 +3,18 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>spring-cloud-dataflow-server-mesos-autoconfig</artifactId>
-	<version>1.7.0.BUILD-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>spring-cloud-dataflow-server-mesos-autoconfig</name>
 
 	<parent>
-		<groupId>org.springframework.cloud</groupId>
+		<groupId>com.trustedchoice</groupId>
 		<artifactId>spring-cloud-dataflow-server-mesos-parent</artifactId>
-		<version>1.7.0.BUILD-SNAPSHOT</version>
+		<version>1.7.0.RELEASE</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
+			<groupId>com.trustedchoice</groupId>
 			<artifactId>spring-cloud-deployer-mesos</artifactId>
 		</dependency>
 		<dependency>
