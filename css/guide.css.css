@@ -61,7 +61,7 @@
 
 .guides-section--container .guide--container .guide--title {
     font-size: 16px;
-    color: #5fa134;
+    color: #2BA2DB;
     line-height: 22px;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .content--container a {
-    color: #5fa134;
+    color: #2BA2DB;
 }
 
 .content--container p,.content--container pre {
@@ -130,7 +130,7 @@
     word-wrap: normal;
     white-space: pre;
     overflow-x: scroll;
-    width: 96.9%%;
+    width: 96.9%;
 }
 
 .content-right-pane--container h2 {

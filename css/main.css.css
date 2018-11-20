@@ -43,7 +43,7 @@ body {
 .title-divider {
     width: 75%;
     height: 5px;
-    background-color: #8CC63F;
+    background-color: #2BA2DB;
     margin: 21px 0;
 }
 
@@ -71,7 +71,7 @@ body {
     background-image: none;
     background-color: #34302d;
     border: none;
-    border-top: 4px solid #6db33f;
+    border-top: 4px solid #233B7A;
     box-shadow: none;
     position: relative;
     border-radius: 0;
@@ -82,7 +82,7 @@ body {
 }
 
 .header--navbar .navbar-inner .spring-logo--container .spring-logo {
-    width: 160px;
+    width: 144px;
     height: 46px;
     display: inline-block;
     margin: 12px 0 6px;
@@ -90,14 +90,14 @@ body {
 }
 
 a.spring-logo {
-    background: url("../img/spring-logo.png") -1px -1px no-repeat;
+    background: url("../img/trustedchoice-logo.png") -1px -1px no-repeat;
 }
 
 a.spring-logo span {
     display: block;
-    width: 160px;
+    width: 144px;
     height: 46px;
-    background: url("../img/spring-logo.png") -1px -48px no-repeat;
+    background: url("../img/trustedchoice-logo.png") -1px -48px no-repeat;
     opacity: 0;
     -moz-transition: opacity .12s ease-in-out;
     -webkit-transition: opacity .12s ease-in-out;
@@ -113,7 +113,7 @@ a:hover.spring-logo span {
 }
 
 .header--navbar .navbar-inner .navbar-link.active a {
-    background-color: #6db33f;
+    background-color: #2BA2DB;
     box-shadow: none;
 }
 
@@ -134,7 +134,7 @@ a:hover.spring-logo span {
 
 .header--navbar .navbar-inner .navbar-link:hover a {
     color: #eeeeee;
-    background-color: #6db33f;
+    background-color: #2BA2DB;
 }
 
 .header--navbar .navbar-inner .navbar-link.nav-search {
@@ -151,7 +151,7 @@ a:hover.spring-logo span {
 
 .header--navbar .navbar-inner .navbar-link.nav-search:hover .navbar-search--icon
     {
-    text-shadow: 0 0 10px #6db33f;
+    text-shadow: 0 0 10px #2BA2DB;
 }
 
 .header--navbar .navbar-inner .navbar-link.nav-search .search-input-close
@@ -160,7 +160,7 @@ a:hover.spring-logo span {
 }
 
 .header--navbar .navbar-inner .navbar-link.nav-search.js-highlight {
-    background-color: #6db33f;
+    background-color: #2BA2DB;
 }
 
 .header--navbar .navbar-inner .navbar-link.nav-search.js-highlight .navbar-search--icon
@@ -272,7 +272,7 @@ a:hover.spring-logo span {
 .right-pane-widget--container li a {
     font-size: 14px;
     line-height: 14px;
-    color: #5fa134;
+    color: #233B7A;
 }
 
 .right-pane-widget--container li:first-child {
@@ -299,12 +299,12 @@ a:hover.spring-logo span {
 }
 
 .header--content .header--content-subtitle--link {
-    color: #8cc63f;
+    color: #2BA2DB;
 }
 
 .header--content .header--content-subtitle--link:hover {
     text-decoration: none;
-    color: #4e681e;
+    color: #2BA2DB;
 }
 
 .row--container {
@@ -324,7 +324,7 @@ a:hover.spring-logo span {
 }
 
 .body--container--link:hover {
-    color: #638e2a;
+    color: #2BA2DB;
     text-decoration: none;
 }
 
@@ -348,7 +348,7 @@ a:hover.spring-logo span {
 
 .list-link--container .list-link a:hover,.list-link--container .list-link div:hover
     {
-    color: #8cc63f;
+    color: #2BA2DB;
     text-decoration: none;
 }
 
@@ -363,12 +363,12 @@ a:hover.spring-logo span {
 
 .popover.right .arrow {
     top: 14px;
-    border-right-color: #8cc63f;
+    border-right-color: #2BA2DB;
     left: -8px;
 }
 
 .popover.right .arrow:after {
-    border-right-color: #8cc63f;
+    border-right-color: #2BA2DB;
 }
 
 .popover.bottom {
@@ -376,18 +376,18 @@ a:hover.spring-logo span {
 }
 
 .popover.bottom .arrow {
-    border-bottom-color: #8cc63f;
+    border-bottom-color: #2BA2DB;
     top: -9px;
     left: 15%;
 }
 
 .popover.bottom .arrow:after {
-    border-bottom-color: #8cc63f;
+    border-bottom-color: #2BA2DB;
 }
 
 .popover .popover-title {
     border-radius: 1px 1px 0 0;
-    background-color: #8cc63f;
+    background-color: #2BA2DB;
     color: white;
 }
 
@@ -529,7 +529,7 @@ input.floating-input:focus {
 
 .content--title {
     display: inline-block;
-    border-top: 3px solid #6db33f;
+    border-top: 3px solid #2BA2DB;
     font-size: 12px;
     line-height: 12px;
     text-transform: uppercase;
@@ -551,7 +551,7 @@ input.floating-input:focus {
 }
 
 .index-page--subtitle a {
-    color: #5fa134;
+    color: #2BA2DB;
 }
 
 .search-result {
@@ -565,11 +565,11 @@ input.floating-input:focus {
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
     margin-bottom: 6px;
-    color: #5fa134;
+    color: #2BA2DB;
 }
 
 .search-result--title:hover {
-    color: #5fa134;
+    color: #2BA2DB;
 }
 
 .search-result--summary {
@@ -599,7 +599,7 @@ footer .container-fluid {
   padding: 30px 0;
 }
 .footer a {
-  color: #6db33f;
+  color: #2BA2DB;
 }
 .footer .nav {
   margin-bottom: 12px;
@@ -613,7 +613,7 @@ footer .container-fluid {
   padding: 0 17px;
 }
 .footer .nav li a:hover {
-  color: #6db33f;
+  color: #2BA2DB;
 }
 .footer .nav li:first-child a {
   padding-left: 0;
@@ -648,7 +648,7 @@ footer .container-fluid {
 }
 .footer .footer-newsletter--container .footer-subscribe--input--container .footer-subscibe--btn {
   text-transform: uppercase;
-  background-color: #6db33f;
+  background-color: #2BA2DB;
   background-image: none;
   border-radius: 0;
   border: none;
@@ -683,7 +683,7 @@ footer .container-fluid {
 
 .item-dropdown-widget .item-dropdown--link:hover .item-dropdown--title,.item-dropdown-widget .item-dropdown--link:hover .item-dropdown--icon
     {
-    color: #5fa134;
+    color: #2BA2DB;
 }
 
 .item-dropdown-widget .item--dropdown {
@@ -696,7 +696,7 @@ footer .container-fluid {
 
 .item-dropdown-widget.js-open .item-dropdown--title {
     color: #f1f1f1;
-    background-color: #6db33f;
+    background-color: #2BA2DB;
     position: relative;
     z-index: 802;
 }
@@ -739,7 +739,7 @@ footer .container-fluid {
 }
 
 .item--dropdown .item--header .item--header-link {
-    color: #6db33f;
+    color: #2BA2DB;
 }
 
 .item--dropdown .item--header .item--header-link [class^=icon-] {
@@ -751,7 +751,7 @@ footer .container-fluid {
 
 .item--dropdown .item--header .item--header-link:hover {
     text-decoration: none;
-    color: #7ac04c;
+    color: #2BA2DB;
 }
 
 .item--dropdown .item--header .item--header-link:hover [class^=icon-] {
@@ -806,11 +806,11 @@ footer .container-fluid {
 
 .item--dropdown .item--body .item--body--version .docs-link {
     display: inline-block;
-    color: #6db33f;
+    color: #2BA2DB;
 }
 
 .item--dropdown .item--body .item--body--version .docs-link:hover {
-    color: #7ac04c;
+    color: #2BA2DB;
 }
 
 .item--dropdown .item--body .item--body--version .docs-link.reference-link
@@ -826,7 +826,7 @@ footer .container-fluid {
 }
 
 .item--dropdown.no-item--header .tool-download-link .file-type {
-    color: #5fa134;
+    color: #2BA2DB;
     line-height: 14px;
     font-size: 14px;
     display: inline-block;

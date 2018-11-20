@@ -4,36 +4,23 @@ title: Spring Cloud Data Flow for Apache Mesos
 
 badges:
 
-  # Specify your project's twitter handle, if any. Delete if none.
-  twitter: SpringCloudOSS
-
   # Customize your project's badges. Delete any entries that do not apply.
   custom:
     - name: Source (GitHub)
-      url:  https://github.com/spring-cloud/spring-cloud-dataflow-server-mesos
+      url:  https://github.com/trustedchoice/spring-cloud-dataflow-server-mesos
       icon: github
 
-    - name: Issues (Waffle)
-      url:  https://waffle.io/spring-cloud/spring-cloud-dataflow-server-mesos
+    - name: Issues (Github)
+      url:  https://github.com/trustedchoice/spring-cloud-deployer-mesos/issues
       icon: tracking
 
-    - name: CI (Bamboo)
-      url:  https://build.spring.io/browse/SCD-MESOSBMASTER
+    - name: CI (Travis CI)
+      url:  https://travis-ci.org/trustedchoice/spring-cloud-dataflow-server-mesos
       icon: ci
-
-    - name: StackOverflow
-      url:  http://stackoverflow.com/questions/tagged/spring-cloud-dataflow
-      icon: stackoverflow
 
 ---
 <!DOCTYPE HTML>
 <html lang="en-US">
-
-<!-- Specify the parent of this project (or delete if none) to influence the rendering of the breadcrumb -->
-{% capture parent_link %}
-[Spring Cloud]({{ site.projects_site_url }}/spring-cloud)
-{% endcapture %}
-
 
 {% capture billboard_description %}
 
@@ -48,6 +35,10 @@ developers can create and orchestrate data pipelines for common use cases such a
 Spring Cloud Data Flow for Apache Mesos offers a collection of patterns and best practices for data 
 microservices running as streaming and batch data pipelines in Apache Mesos.
 
+This project was originally maintained by the Spring Cloud Data Flow Team at [Pivotal Software](https://www.pivotal.io), however further maintainance was donated to [TrustedChoice.com](https://www.trustedchoice.com) as explained [here](https://spring.io/blog/2018/11/01/project-update-spring-cloud-data-flow-for-apache-mesos-and-apache-yarn).
+
+For legacy information, refer to the [original project page](http://cloud.spring.io/spring-cloud-dataflow-server-mesos/).
+
 ## Features
 
 * Consume streaming and batch data microservices as maven artifacts
@@ -61,14 +52,14 @@ microservices running as streaming and batch data pipelines in Apache Mesos.
 
 ## Quick Start
 
-Step 1 - [Configure, Deploy and Download](http://docs.spring.io/spring-cloud-dataflow-server-mesos/docs/current-SNAPSHOT/reference/htmlsingle/#_deploying_streams_and_tasks_on_apache_mesos_and_marathon_chronos) a Mesos cluster, Spring Cloud Data Flow for Apache Mesos Server and the Spring Cloud Data Flow Shell Application
+Step 1 - [Configure, Deploy and Download](http://trustedchoice.github.io/spring-cloud-dataflow-server-mesos/docs/1.7.0.RELEASE/reference/htmlsingle/#_deploying_streams_and_tasks_on_apache_mesos_and_marathon_chronos) a Mesos cluster, Spring Cloud Data Flow for Apache Mesos Server and the Spring Cloud Data Flow Shell Application
 
-Step 2 - Create **‘ticktock’** Stream
+Step 2 - Create `ticktock` Stream
 ```
 dataflow:>stream create --name ticktock --definition "time | log" --deploy
 ```
 
-Step 3 - Verify **‘ticktock’** Results in Mesos UI
+Step 3 - Verify `ticktock` Results in Mesos UI
 
 Step 4 - Launch Dashboard at: http://&lt;SCDF_SERVER_HOST&gt;:&lt;PORT&gt;/dashboard
 
@@ -78,6 +69,7 @@ Step 4 - Launch Dashboard at: http://&lt;SCDF_SERVER_HOST&gt;:&lt;PORT&gt;/dashb
 
 ### Related Projects
 
+* [Spring Cloud Deployer Mesos](https://github.com/trustedchoice/spring-cloud-deployer-mesos/releases)
 * [Spring Cloud Data Flow](http://cloud.spring.io/spring-cloud-dataflow/)
 * [Spring Cloud Stream](http://cloud.spring.io/spring-cloud-stream/)
 * [Spring Cloud Stream Applications](https://github.com/spring-cloud/spring-cloud-stream-app-starters)

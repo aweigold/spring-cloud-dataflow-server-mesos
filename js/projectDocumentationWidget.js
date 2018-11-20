@@ -12,7 +12,7 @@ Spring.ProjectDocumentationWidget = function () {
   var mavenWidgetEl = $('.js-download-maven-widget');
   var documentationEl = $('.js-documentation-widget');
 
-  var projectUrl = apiBaseUrl + "/project_metadata/" + projectId;
+  var projectUrl = siteBaseUrl + "/releases/releases.json";
   var promise = Spring.loadProject(projectUrl);
 
   promise.then(function (project) {
@@ -40,7 +40,7 @@ Spring.buildQuickStartWidget = function (quickStartEl, mavenWidgetEl, project) {
 
 Spring.loadProject = function (url) {
   return $.ajax(url, {
-    dataType: 'jsonp',
+    dataType: 'json',
     processData: false
   }).then(function (value) {
       return new Spring.Project(value);

@@ -1,0 +1,65 @@
+{
+  "id": "spring-cloud-dataflow-server-mesos",
+  "name": "Spring Cloud Data Flow for Apache Mesos",
+  "repoUrl": "https://github.com/trustedchoice/spring-cloud-dataflow-server-mesos",
+  "siteUrl": "http://trustedchoice.github.io/spring-cloud-dataflow-server-mesos",
+  "category": "active",
+  "rawBootConfig": "",
+  "renderedBootConfig": "",
+  "rawOverview": "",
+  "renderedOverview": "",
+  "displayOrder": 255,
+  "childProjectList": [],
+  "stackOverflowTags": "",
+  "parentId": "spring-cloud-dataflow",
+  "projectSamples": [],
+  "projectReleases": [
+    {
+      "releaseStatus": "GENERAL_AVAILABILITY",
+      "refDocUrl": "http://trustedchoice.github.io/spring-cloud-dataflow-server-mesos/docs/1.7.0.RELEASE/reference/html",
+      "apiDocUrl": "http://trustedchoice.github.io/spring-cloud-dataflow-server-mesos/docs/1.7.0.RELEASE/api/",
+      "groupId": "com.trustedchoice",
+      "artifactId": "spring-cloud-dataflow-server-mesos",
+      "version": "1.7.0.RELEASE",
+      "snapshot": false,
+      "current": true,
+      "generalAvailability": true,
+      "versionDisplayName": "1.7.0",
+      "preRelease": false
+    },
+    {
+      "releaseStatus": "SNAPSHOT",
+      "refDocUrl": "http://docs.spring.io/spring-cloud-dataflow-server-mesos/docs/1.1.0.BUILD-SNAPSHOT/reference/html",
+      "apiDocUrl": "http://docs.spring.io/spring-cloud-dataflow-server-mesos/docs/1.1.0.BUILD-SNAPSHOT/api/",
+      "groupId": "org.springframework.cloud",
+      "artifactId": "spring-cloud-dataflow-server-mesos",
+      "repository": {
+        "id": "spring-snapshots",
+        "name": "Spring Snapshots",
+        "url": "https://repo.spring.io/libs-snapshot",
+        "snapshotsEnabled": true
+      },
+      "version": "1.1.0.BUILD-SNAPSHOT",
+      "snapshot": true,
+      "current": false,
+      "generalAvailability": false,
+      "versionDisplayName": "1.1.0",
+      "preRelease": false
+    },
+    {
+      "releaseStatus": "GENERAL_AVAILABILITY",
+      "refDocUrl": "http://docs.spring.io/spring-cloud-dataflow-server-mesos/docs/1.0.0.RELEASE/reference/html",
+      "apiDocUrl": "http://docs.spring.io/spring-cloud-dataflow-server-mesos/docs/1.0.0.RELEASE/api/",
+      "groupId": "org.springframework.cloud",
+      "artifactId": "spring-cloud-dataflow-server-mesos",
+      "version": "1.0.0.RELEASE",
+      "snapshot": false,
+      "current": false,
+      "generalAvailability": true,
+      "versionDisplayName": "1.0.0",
+      "preRelease": false
+    }
+  ],
+  "stackOverflowTagList": [],
+  "topLevelProject": false
+}
