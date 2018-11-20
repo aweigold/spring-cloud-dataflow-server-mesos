@@ -62,7 +62,7 @@ mkdir -p /tmp/spring-cloud-dataflow-server-mesos/docs/${release_name}
 unzip spring-cloud-dataflow-server-mesos-docs/target/spring-cloud-dataflow-server-mesos-docs-${release_name}.zip -d /tmp/spring-cloud-dataflow-server-mesos/docs/${release_name}
 git --git-dir=/tmp/spring-cloud-dataflow-server-mesos/.git/ --work-tree=/tmp/spring-cloud-dataflow-server-mesos add . && \
   git --git-dir=/tmp/spring-cloud-dataflow-server-mesos/.git/ --work-tree=/tmp/spring-cloud-dataflow-server-mesos commit --message "Added spring-cloud-dataflow-server-mesos ${release_name} reference documentation" && \
-  git --git-dir=/tmp/spring-cloud-dataflow-server-mesos/.git/ --work-tree=/tmp/spring-cloud-dataflow-server-mesos push origin master
+  git --git-dir=/tmp/spring-cloud-dataflow-server-mesos/.git/ --work-tree=/tmp/spring-cloud-dataflow-server-mesos push origin gh-pages
 
 # Build and push Docker image
 echo -e "\033[0;32mBuilding and pushing Docker image...\033[0m"
